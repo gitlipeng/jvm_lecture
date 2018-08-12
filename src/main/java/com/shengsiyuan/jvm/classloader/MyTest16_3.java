@@ -12,6 +12,10 @@ public class MyTest16_3 extends ClassLoader{
 
     private final String fileExtension = ".class";
 
+    public MyTest16_3(ClassLoader parent) {
+        super(parent);
+    }
+
     public MyTest16_3(String classLoaderName){
         /**
          * Creates a new class loader using the <tt>ClassLoader</tt> returned by
@@ -98,7 +102,6 @@ public class MyTest16_3 extends ClassLoader{
 
         System.gc();
 
-        Thread.sleep(100000);
 
         loader1 = new MyTest16_3("loader1");
         loader1.setPath("/Users/lipeng/Desktop/");

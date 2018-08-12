@@ -16,20 +16,18 @@ public class MyTest4 {
 
         System.out.println(myParent4s.getClass());//class [Lcom.shengsiyuan.jvm.classloader.MyParent4;
         System.out.println(myParent4s.getClass().getClassLoader());
+
+        System.out.println("========");
+
         MyParent4[][] myParent4s1 = new MyParent4[1][1];
-
         System.out.println(myParent4s1.getClass());//class [[Lcom.shengsiyuan.jvm.classloader.MyParent4;
-
         System.out.println(myParent4s.getClass().getSuperclass());//class java.lang.Object
 
         System.out.println("========");
 
         int[] ints = new int[1];
-
         System.out.println(ints.getClass());//class [I
         System.out.println(ints.getClass().getSuperclass());//class java.lang.Object
-
-
     }
 }
 

@@ -12,32 +12,40 @@ package com.shengsiyuan.jvm.classloader;
  * -XX:<option>=<value>表示将option选项的值设置为value
  */
 public class MyTest1 {
-    public static void main(String[] args) {
-        System.out.println(MyChild1.str);//MyParent static block  hello world
-
-
-    }
-}
-class MyParent9{
-    public static String str = "hello world";
-
-    static {
-        System.out.println("MyParent static block");
+    public static void main(String[] args) throws ClassNotFoundException {
+        MyParent1 myParent2 = new MyChild1();
+        System.out.println(myParent2.str);
     }
 }
 class MyParent1 {
-    public static String str = "hello world";
+    public    String str = "hello world";
 
     static {
         System.out.println("MyParent static block");
+    }
+
+    public String getStr() {
+        return str;
+    }
+
+    public void setStr(String str) {
+        this.str = str;
     }
 }
 
 class MyChild1 extends MyParent1 {
-
-    public static String str2 = "welcome";
-
+    public String str = "mychild";
     static {
         System.out.println("MyChild1 static block");
+    }
+
+    @Override
+    public String getStr() {
+        return str;
+    }
+
+    @Override
+    public void setStr(String str) {
+        this.str = str;
     }
 }

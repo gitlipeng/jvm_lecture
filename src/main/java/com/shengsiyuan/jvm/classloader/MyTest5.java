@@ -9,22 +9,16 @@ import java.util.Random;
  */
 public class MyTest5 {
     public static void main(String[] args) {
-        System.out.println(MyParent5.thread);
+        System.out.println(MyChild5.a);
     }
+
 }
 
-
-interface MyGradpa{
-    public static int a = new Random().nextInt();
+interface MyParent5{
+//        public static int a  = new Random().nextInt(3);
+    public static int b  = 7;
     public static Thread thread = new Thread(){
-        {
-            System.out.println("MyGradpa invoked");
-        }
-    };
-}
-
-interface MyParent5 extends MyGradpa{
-    public static Thread thread = new Thread(){
+        //每个C的实例创建时都会执行一次
         {
             System.out.println("MyParent5 invoked");
         }
@@ -32,9 +26,14 @@ interface MyParent5 extends MyGradpa{
 }
 
 
-
-
-
-
+interface MyChild5 extends MyParent5{
+    public static int a  = new Random().nextInt(3);
+    public static Thread thread = new Thread(){
+        //每个C的实例创建时都会执行一次
+        {
+            System.out.println("MyChild5 invoked");
+        }
+    };
+}
 
 

@@ -5,7 +5,7 @@ package com.shengsiyuan.jvm.classloader;
  ldc:表示将int,float或是String类型的常量值从常量池中推送至栈顶
  bipush:表示将单字节(-128 ~ 127)的常量值推送至栈顶 （比如short类型）
  sipush：表示将短zheng'xing整形常量值(-32768 ~ 32767)推送至栈顶
- iconst_1:表示将int类型推送至栈顶,最多到iconst_5
+ iconst_1:表示将int类型推送至栈顶,(iconst_1 ~ iconst_5)
  */
 public class MyTest2 {
 

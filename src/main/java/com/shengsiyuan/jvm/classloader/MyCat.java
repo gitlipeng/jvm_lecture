@@ -6,4 +6,8 @@ public class MyCat {
 
 //        System.out.println("from MyCat: " + MySample.class);
     }
+
+    static {
+        System.out.println("myCat static invoked");
+    }
 }
