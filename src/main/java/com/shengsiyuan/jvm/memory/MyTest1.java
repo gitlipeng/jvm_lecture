@@ -37,7 +37,14 @@ import java.util.List;
  1. 使用句柄的方式
  2. 使用直接指针的方式
 
+ 设置堆的大小
  -Xms5m -Xmx5m -XX:+HeapDumpOnOutOfMemoryError
+ 转储
+ 工具 jvisualvm
+
+ 改一下：
+
+ -Xms1m -Xmx1m -XX:+HeapDumpOnOutOfMemoryError
 
  */
 public class MyTest1 {
@@ -46,6 +53,8 @@ public class MyTest1 {
 
         for (; ; ) {
             list.add(new MyTest1());
+
+            System.gc();
         }
     }
 
