@@ -11,7 +11,15 @@ package com.shengsiyuan.jvm.memory;
  jcmd pid Thread.print:查看线程堆栈信息
  jcmd 12786 GC.heap_dump /Users/lipeng/Desktop/hello.hprof : 导出Heap dump文件，导出的文件可以通过jvisualvm查看
  jcmd pid VM.system_properties:查看JVM的属性信息
+ jcmd 14925 VM.version:查看目标JVM进程的版本信息
+ jcmd 14963 VM.command_line：查看JVM启动的命令行参数信息
 
+ jstack :可以查看或是导出Java应用程序中线程的堆栈信息
+
+ jmc：Java Mission Control
+ jfr: Java Flight Recorder Java 飞行记录器
+
+ jhat
  */
 public class MyTest5 {
     public static void main(String[] args) {

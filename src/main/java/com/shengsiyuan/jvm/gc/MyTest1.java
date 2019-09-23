@@ -20,7 +20,7 @@ package com.shengsiyuan.jvm.gc;
 
  0.0036608 secs:本次GC总耗时GC (Allocation Failure)：分配空间失败
 
- PSYoungGen: 6633K->608K(9216K)：Parallel Sc收集器，执行GC之前新生代对象占用的空间->执行完GC之后新生代对象占用的空间（新生代总的空间容量 8:1:1 有1M始终为空，为了复制，所以总的是8+1=9M）
+ PSYoungGen: 6633K->608K(9216K)：Parallel Scavenge(新生代垃圾收集器)，执行GC之前新生代对象占用的空间->执行完GC之后新生代对象占用的空间（新生代总的空间容量 8:1:1 有1M始终为空，为了复制，所以总的是8+1=9M）
 
  6633K->4712K(19456K):执行GC之前总的对象占用的空间->执行完GC之后总的存活对象占用的空间（总的堆的可用容量19M）
 
@@ -52,7 +52,7 @@ public class MyTest1 {
 
         byte[] myAlloc1 = new byte[2 * size];
         byte[] myAlloc2 = new byte[2 * size];
-        byte[] myAlloc3 = new byte[3 * size];
+        byte[] myAlloc3 = new byte[2 * size];
 
         System.out.println("hello world");
     }
